@@ -1,10 +1,10 @@
 import streamlit as st
 from g4f.client import Client
 
-# App title
-st.set_page_config(page_title="🤖💬 GPT-4 Chatbot")
+# App title and configuration
+st.set_page_config(page_title="🤖💬 GPT-4 Chatbot", page_icon="🤖")
 
-# Initialize the GPT-3.5 client
+# Initialize the GPT-4 client
 client = Client()
 
 # Sidebar for model selection and chat clearing
@@ -13,11 +13,14 @@ with st.sidebar:
     st.markdown('This is a chatbot using various models.')
     model = st.selectbox(
         "Choose a model",
-        ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "Meta-Llama-3-8b-instruct", "Meta-Llama-3-70b-instruct", 
-         "CodeLlama-34b-Instruct-hf", "CodeLlama-70b-Instruct-hf", "Mixtral-8x7B-Instruct-v0.1", 
-         "Mistral-7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.2", "zephyr-orpo-141b-A35b-v0.1", 
-         "dolphin-2.6-mixtral-8x7b", "gemini", "gemini-pro", "claude-v2", "claude-3-opus", 
-         "claude-3-sonnet", "lzlv_70b_fp16_hf", "airoboros-70b", "openchat_3.5", "pi"]
+        [
+            "gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "Meta-Llama-3-8b-instruct", 
+            "Meta-Llama-3-70b-instruct", "CodeLlama-34b-Instruct-hf", "CodeLlama-70b-Instruct-hf", 
+            "Mixtral-8x7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.2", 
+            "zephyr-orpo-141b-A35b-v0.1", "dolphin-2.6-mixtral-8x7b", "gemini", "gemini-pro", 
+            "claude-v2", "claude-3-opus", "claude-3-sonnet", "lzlv_70b_fp16_hf", "airoboros-70b", 
+            "openchat_3.5", "pi"
+        ]
     )
     if st.button("Clear Chat"):
         st.session_state.messages = [{"role": "assistant", "content": "How may I help you?"}]
@@ -65,5 +68,3 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 full_response += delta
                 response_container.markdown(full_response)
         st.session_state.messages.append({"role": "assistant", "content": full_response})
-
-# To run the app, use the command: streamlit run your_script_name.py

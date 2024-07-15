@@ -2,7 +2,7 @@ import streamlit as st
 from g4f.client import Client
 
 # App title and configuration
-st.set_page_config(page_title="🤖💬 Multipurpose Chatbot", page_icon="🤖")
+st.set_page_config(page_title="🤖💬 ChatGpt-4 Chatbot", page_icon="🤖")
 
 # Initialize the GPT-4 client
 client = Client()

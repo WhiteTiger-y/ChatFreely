@@ -14,7 +14,7 @@ with st.sidebar:
     model = st.selectbox(
         "Choose a model",
         [
-            "gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "Meta-Llama-3-8b-instruct", 
+            "gpt-3.5-turbo", "gpt-4", "gpt-4-turbo","gpt-4o", "Meta-Llama-3-8b-instruct", 
             "Meta-Llama-3-70b-instruct", "CodeLlama-34b-Instruct-hf", "CodeLlama-70b-Instruct-hf", 
             "Mixtral-8x7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.1", "Mistral-7B-Instruct-v0.2", 
             "zephyr-orpo-141b-A35b-v0.1", "dolphin-2.6-mixtral-8x7b", "gemini", "gemini-pro", 
